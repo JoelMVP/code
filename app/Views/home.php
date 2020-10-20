@@ -1,0 +1,2 @@
+<?php
+$usuario = $this->{'data'};
