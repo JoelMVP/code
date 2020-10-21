@@ -42,11 +42,11 @@ class BaseController extends Controller
 				'users' => array(
 					//   1		  2       3        4           5                6        7
 					// clave     ci     imagen   color      nombreC          fechaNac  LugarR
-					[1, 5208, 3751440, 'img.jpg', 1, 'AURORA BRU TORRES', "1980-02-20", 01],
-					[2, 5287, 16374766, 'img.jpg', 1, 'MARIA ROSARIO CORRAL SOLER', '1994-08-11', 04],
-					[3, 8289, 28340389, 'img.jpg', 1, 'ANTONIO PORTILLA TORRECILLA', '1992-04-02', 04],
-					[4, 6007, 41079811, 'img.jpg', 1, 'JORGE IZAGUIRRE MELLADO', '1996-10-06', 02],
-					[5, 222, 111, 'img.jpg', 1, 'JOEL MENDOZA PAUCARA', "1997-01-15", 01],
+					[1, 5208, 3751440, 'img.jpg', 1, 'AURORA BRU TORRES', "1980-02-20", 'La Paz'],
+					[2, 5287, 16374766, 'img.jpg', 1, 'MARIA ROSARIO CORRAL SOLER', '1994-08-11', 'Cochabamba'],
+					[3, 8289, 28340389, 'img.jpg', 1, 'ANTONIO PORTILLA TORRECILLA', '1992-04-02', 'Chuquisaca'],
+					[4, 6007, 41079811, 'img.jpg', 1, 'JORGE IZAGUIRRE MELLADO', '1996-10-06', 'Oruro'],
+					[5, 222, 111, 'img.jpg', 1, 'JOEL MENDOZA PAUCARA', "1997-01-15", 'La Paz'],
 				),
 				'login' => false
 			];

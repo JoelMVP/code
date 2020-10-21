@@ -25,7 +25,7 @@ switch ($usuario[4]) {
 ?>
 <div class="index">
     <div class="home__title">
-        <h1 class="home__h1">Usuario: <?= $usuario[5], $usuario[4] ?> </h1>
+        <h1 class="home__h1">Usuario: <?= $usuario[5] ?> </h1>
         <a class="nav-link" href="<?php echo base_url() . '/login' ?>">Cerrar Sesion</a>
     </div>
     <!-- <?php echo form_open('/home/actualiza', ['class' => 'home__form', 'enctype' => 'multipart/form-data']);  ?> -->
@@ -37,28 +37,28 @@ switch ($usuario[4]) {
                 <span>
                     <?= $usuario[2] ?>
                 </span>
-                <i class="fas fa-user-lock"></i>
+                <i class="fas fa-id-card"></i>
             </div>
             <span>Nombre Completo</span>
             <div class="data__container">
                 <span>
                     <?= $usuario[5] ?>
                 </span>
-                <i class="fas fa-user-lock"></i>
+                <i class="fas fa-user"></i>
             </div>
             <span>Cuidad</span>
             <div class="data__container">
                 <span>
                     <?= $usuario[7] ?>
                 </span>
-                <i class="fas fa-user-lock"></i>
+                <i class="fas fa-map-marked-alt"></i>
             </div>
             <span>Fecha de Nacimiento</span>
             <div class="data__container">
                 <span>
                     <?= $usuario[6] ?>
                 </span>
-                <i class="fas fa-user-lock"></i>
+                <i class="fas fa-calendar-day"></i>
             </div>
         </div>
         <div class="home__options">
