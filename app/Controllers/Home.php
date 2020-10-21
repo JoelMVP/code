@@ -10,20 +10,10 @@ class Home extends BaseController
 	}
 	public function index()
 	{
-		// echo count($this->session->get());
-		// var_dump($this->session->get());
-		// $data = $this->session->get();
-		// $data = ['name' => 'joelmendozawwww', 'aaaaasss' => "hola"];
-		// $this->session->set($data);
-		// echo '<br />';
-		// echo '<br />';
-		// echo $this->session->get('users')[1][0];
-		// echo '<br /> Users:' . $this->session->get('login');
-		// var_dump($this->session->get());
 		$estructura = view('layout/header') . view('login') . view('layout/footer');
 		return $estructura;
 	}
-	public function guarda()
+	public function perfil()
 	{
 		$request = \Config\Services::request();
 		$userPost = array(
@@ -38,14 +28,47 @@ class Home extends BaseController
 		};
 		if ($validate) {
 			$estructura = view('layout/header') . view('home', $validate) . view('layout/footer');
-			echo 'Usuario encontrado';
+			redirect('', 'refresh');
 		} else {
 			$estructura = view('layout/header') . view('login') . view('layout/footer');
-			echo 'Usuario no encontrado';
 		}
 		return $estructura;
 	}
-	public function Eliminar()
+	public function actualiza()
+	{
+		$request = \Config\Services::request();
+		if ($request->getMethod() == 'post') {
+			$newName = null;
+			$file = $request->getFile('image');
+			if ($file->isValid() && !$file->hasMoved()) {
+				$newName = $file->getRandomName();
+				if (!$file->move('assets/img/', $newName)) {
+					echo $file->getErrorString() . ' ' . $file->getError();
+				}
+			}
+			$id = $request->getPost('id') - 1;
+			$colorS = $request->getPost('colorS');
+			$fakeBD =  $this->session->get();
+			$user = $fakeBD['users'][$id];
+			// var_dump($user);
+			if ($newName !== null) {
+				$user[3] = $newName;
+			} else {
+				$user[3] = $this->session->get('users')[$id][3];
+			}
+			$user[4] = $colorS;
+			if ($request->getPost('save')) {
+				$fakeBD['users'][$id][3] = $user[3];
+				$fakeBD['users'][$id][4] = $user[4];
+				$this->session->set($fakeBD);
+			}
+			$estructura = view('layout/header') . view('home', $user) . view('layout/footer');
+		} else {
+			$estructura = view('layout/header') . view('login') . view('layout/footer');
+		}
+		return $estructura;
+	}
+	public function eliminar()
 	{
 		$this->session->destroy();
 	}

@@ -125,3 +125,7 @@ nb-configuration.xml
 /phpunit*.xml
 /.phpunit.*.cache
 
+# ignore image
+assets/img/*
+!assets/img/img.jpg
+hta.txt
